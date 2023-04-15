@@ -13,8 +13,8 @@ type State = {
 };
 
 enum LANGUAGE {
-  en = 0,
-  pt = 1,
+  "en-US" = 0,
+  "pt-BR" = 1,
 }
 
 export const withLocale = (Wrapped: FC<Props>) => {
@@ -53,13 +53,13 @@ export const withLocale = (Wrapped: FC<Props>) => {
           >
             <TouchableOpacity
               style={styles.button}
-              onPress={() => this.changeLanguage(LANGUAGE.en)}
+              onPress={() => this.changeLanguage(LANGUAGE["en-US"])}
             >
               <Text style={styles.label}>{i18n.t("common:english")}</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.button}
-              onPress={() => this.changeLanguage(LANGUAGE.pt)}
+              onPress={() => this.changeLanguage(LANGUAGE["pt-BR"])}
             >
               <Text style={styles.label}>{i18n.t("common:portuguese")}</Text>
             </TouchableOpacity>
