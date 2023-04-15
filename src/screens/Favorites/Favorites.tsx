@@ -14,11 +14,15 @@ const renderItem =
 export default function Favorites() {
   const { data } = useStaleWhileRevalidate<Genre[] | undefined>([`get-genres`]);
 
-  const { movies } = useSelector((state: any) => state.favorites);
+  const favorites = useSelector((state: any) =>
+    state.favorites.favorites.find(
+      (favorite: any) => favorite.username === state.user.username
+    )
+  );
 
   return (
     <FlatList
-      data={movies || []}
+      data={favorites?.movies || []}
       style={styles.list}
       renderItem={renderItem(data || [])}
       contentContainerStyle={{ flexGrow: 1 }}
