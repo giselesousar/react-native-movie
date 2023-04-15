@@ -59,8 +59,7 @@ export default function MovieList({ genres }: MovieListProps) {
         filtersRef?.current?.query(),
       ],
       ([_, page, query]: [string, number, string]) =>
-        fetcher(i18n.language, page, query),
-      { suspense: true }
+        fetcher(i18n.language, page, query)
     );
 
   const didReachTheEnd = useCallback<() => boolean | undefined>(
