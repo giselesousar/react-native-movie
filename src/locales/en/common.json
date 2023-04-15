@@ -5,5 +5,11 @@
     "favorites": "Favorites",
     "description": "Description",
     "cast": "Cast",
-    "movie": "Movie"
+    "movie": "Movie",
+    "search": "Search...",
+    "runtime": "Runtime",
+    "status": "Status",
+    "budget": "Budget",
+    "genres": "Genres",
+    "save": "Save"
 }

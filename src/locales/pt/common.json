@@ -5,5 +5,11 @@
   "favorites": "Favoritos",
   "description": "Descrição",
   "cast": "Elenco",
-  "movie": "Filme"
+  "movie": "Filme",
+  "search": "Buscar...",
+  "runtime": "Duração",
+  "status": "Status",
+  "budget": "Orçamento",
+  "genres": "Gêneros",
+  "save": "Salvar"
 }
