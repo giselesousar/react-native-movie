@@ -22,6 +22,6 @@ i18n.use(initReactI18next).init({
     },
 });
 
-AsyncStorage.getItem("language").then((language) => i18n.changeLanguage(language || 'en'))
+AsyncStorage.getItem("language").then((language) => i18n.changeLanguage(language || 'en-US'))
 
 export default i18n;
