@@ -78,7 +78,7 @@ export function MovieScreen() {
     <ScrollView style={styles.container} scrollIndicatorInsets={{ right: 1 }}>
       <View style={styles.header}>
         <View style={styles.row}>
-          <Text style={styles.title}>{data?.title}</Text>
+          <Text numberOfLines={2} style={styles.title}>{data?.title}</Text>
           <TouchableOpacity
             onPress={() => dispatch(favoriteMovie(username, movie))}
           >
@@ -158,6 +158,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: "bold",
+    maxWidth: '90%'
   },
   avaliationContainer: {
     flexDirection: "row",

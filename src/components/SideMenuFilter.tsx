@@ -4,8 +4,10 @@ import React, {
   forwardRef,
   useImperativeHandle,
   Ref,
+  useEffect,
 } from "react";
 import {
+  Dimensions,
   Modal,
   ScrollView,
   StyleSheet,
@@ -26,6 +28,8 @@ type SideMenuFilterProps = {
 export type SideMenuHandle = {
   open: () => void;
 };
+
+const { height } = Dimensions.get("screen");
 
 function SideMenuFilter(
   { genres, onSave }: SideMenuFilterProps,
@@ -51,6 +55,10 @@ function SideMenuFilter(
       filtered.length < checked.length ? filtered : [...checked, { id, name }]
     );
   };
+
+  useEffect(() => {
+    setChecked(genres);
+  }, [genres]);
 
   return (
     <View style={styles.container}>
@@ -99,7 +107,7 @@ const styles = StyleSheet.create({
   },
   menu: {
     backgroundColor: "#fff",
-    height: "55%",
+    height: height * 0.7,
     width: "90%",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 0 },

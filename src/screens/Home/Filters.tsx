@@ -7,7 +7,13 @@ import React, {
   useRef,
   Ref,
 } from "react";
-import { StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
+import {
+  Dimensions,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { useTranslation } from "react-i18next";
 
@@ -24,6 +30,8 @@ type FiltersProps = {
 export type FiltersHandle = {
   query: () => string;
 };
+
+const { width } = Dimensions.get("screen");
 
 function Filters(
   { refresh, genres, setFilterGenres }: FiltersProps,
@@ -92,7 +100,7 @@ const styles = StyleSheet.create({
   },
   input: {
     width: "80%",
-    paddingLeft: 8,
+    paddingLeft: width * 0.02,
   },
   filter: {
     backgroundColor: "#eee",
